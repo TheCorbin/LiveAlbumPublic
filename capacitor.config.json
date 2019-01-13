@@ -1,0 +1,6 @@
+{
+  "appId": "com.LiveAlbum.app",
+  "appName": "LiveAlbum",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

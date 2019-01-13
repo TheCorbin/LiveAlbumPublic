@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> -->
+
+    <ion-title> Room List </ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button *ngIf="anonymous" (click)="upgradeAccount()">
+        <ion-icon name="person-add"></ion-icon>
+      </ion-button> -->
+      
+      <ion-button icon-only (click)="logout()" icon-end>
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+      <form [formGroup]="visitForm"  class="noPadding">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col class="centerContent">
+              <p style="margin-bottom:1em">Visit a Room</p>
+            </ion-col>
+            <ion-col size="6">
+              <ion-input type="roomId" class="roomInput" formControlName="roomId" placeholder="Enter Code Here">
+              </ion-input>
+            </ion-col>
+            <ion-col class="centerContent">
+              <ion-button block color="secondary" (click)='visitRoom()' [disabled]='!visitForm.valid'>
+                Go
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </form>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-card>
+    <ion-card-content>
+      <form [formGroup]="visitForm">
+
+        <ion-label>
+          <ion-icon name="barcode" item-start class="text-primary"></ion-icon>
+          Have a Room Code?  Enter it here:
+        </ion-label>
+
+        <ion-input type="roomId" formControlName="roomId"  placeholder="Right here">
+        </ion-input>
+      
+        <ion-item class="error-message" *ngIf="!visitForm.controls['roomId'].valid && visitForm.controls['roomId'].touched">
+          <ion-label>Your roomId needs more than 6 characters</ion-label> 
+        </ion-item>
+
+        <ion-button block (click)='goToRoom()' [disabled]='!visitForm.valid'>
+          GO!!!
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-button block (click)="createRoom()">
+    Create Room
+  </ion-button>
+
+  <ion-list>
+    <ion-list-header>
+      Room List
+    </ion-list-header>
+    <ion-item *ngFor="let room of roomList | async"
+              (click)="navigateToRoom(room.roomReference.id)">
+      {{ room.roomReference.id }}
+    </ion-item>
+  </ion-list>
+</ion-content>

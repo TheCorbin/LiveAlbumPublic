@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>Create An Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="auth-page">
+  <!-- <img src="http://placehold.it/300x100" /> -->
+  <form [formGroup]="signupForm">
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Your email address"></ion-input>
+    </ion-item>
+
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.touched">
+      <p>Please enter a valid email address.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Your password">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid && 
+      signupForm.controls.password.touched">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+
+    <ion-button block (click)="signupUser(signupForm)" [disabled]="!signupForm.valid">
+      Create new Account
+    </ion-button>
+  </form>
+</ion-content>
