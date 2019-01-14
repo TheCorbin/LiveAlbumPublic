@@ -1,0 +1,28 @@
+.fullQRCode{
+  width: 100%;
+  border:5px solid var(--ion-color-warning);
+  padding: 3rem;
+  background: white;
+}
+
+.instructions{
+  padding-right: 3rem;
+  padding-left: 3rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.instructionsText{
+  background: white;
+  border:3px dashed var(--ion-color-warning);
+  margin: 10px 0px 0px 0px;
+  padding: 10px 0px 10px 0px; 
+}
+
+.barcodePage{
+  height: 100%;
+  display: flex!important;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 5em;
+}

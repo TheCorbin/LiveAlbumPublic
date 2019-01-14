@@ -1,6 +1,6 @@
-.lineInput{
-  --background: white;
-}
+// .lineInput{
+//   --background: white;
+// }
 
 .noPadding{
   padding-top: 0px;
@@ -17,3 +17,22 @@
 .centerContent{
   text-align: center;
 }
+
+.content{
+  --background: var(--ion-color-secondary);
+}
+
+.roomList{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.item{
+  --background: var(--ion-color-secondary);
+  color:white;
+}
+
+.headerText{
+  font-size: 20px;
+}
+

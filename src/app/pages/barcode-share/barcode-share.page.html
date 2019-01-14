@@ -1,12 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>SHARE:{{ this.roomId }}</ion-title>
+    <ion-title>SHARE: {{ this.roomId }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img class="center" *ngIf="displayQrCode()" [src]="generated"/>
+  <div class="background barcodePage">
+    <img class="fullQRCode" *ngIf="displayQrCode()" [src]="generated"/>
+
+    <div class="instructions">
+      <p class="instructionsText">Point another phone camera at this QR code to get a shortcut to {{ this.roomId }}.</p>
+    </div> 
+  </div>
 </ion-content>

@@ -35,10 +35,6 @@ export class BarcodeSharePage implements OnInit {
   process() {
     const qrcode = QRCode;
     const self = this;
-    console.log('This is the room Code' + this.room);
-    let encoded = encodeURI(this.room);
-    console.log('This is the room code after encoding');
-
 
     qrcode.toDataURL(self.code + '?' + this.room, { errorCorrectionLevel: 'H', text: 'Ryan' }, function (err, url) {
       self.generated = url;

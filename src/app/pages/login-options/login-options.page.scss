@@ -45,8 +45,10 @@ form {
   background-size: 100%;
 }
 
-h2 {
-  display: none;
+.title{
+  text-align: center;
+  font-size: 3rem;
+  margin: .5rem;
 }
 
 .scroll-content {
@@ -87,11 +89,13 @@ h2 {
 }
 
 .btn-facebook {
+  color:white;
   --background: #3B5999;
   
 }
 
 .btn-gplus {
+  color: white;
   --background: #E04006;
 }
 
