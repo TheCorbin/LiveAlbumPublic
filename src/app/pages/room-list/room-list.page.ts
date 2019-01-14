@@ -24,10 +24,9 @@ export class RoomListPage implements OnInit {
               public alertCtrl: AppAlertController,
               formBuilder: FormBuilder,
               ) {
-    console.log('Starting room list construction');
     this.user = this.auth.getUser();
     this.anonymous = this.user.email == null ? true : false;
-    this.roomList = this.auth.getRoomIds().valueChanges();
+    // this.roomList = this.auth.getRoomIds().valueChanges();
     // console.log('this is the room list', this.roomList);
 
     this.visitForm = formBuilder.group({
@@ -39,6 +38,8 @@ export class RoomListPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Starting room list construction');
+    this.roomList = this.auth.getRoomIds().valueChanges();
   }
 
   ionViewWillEnter() {
@@ -51,6 +52,11 @@ export class RoomListPage implements OnInit {
 
   createRoom() {
     this.auth.createRoom();
+  }
+
+  deleteRoom(roomSlideItem, room) {
+    roomSlideItem.close();
+    this.auth.deleteRoom(room);
   }
 
   async visitRoom() {

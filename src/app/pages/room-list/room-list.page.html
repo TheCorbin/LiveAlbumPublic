@@ -10,7 +10,7 @@
   <ion-toolbar color="secondary">
       <form [formGroup]="visitForm"  class="noPadding">
         <ion-grid no-padding>
-          <ion-row>
+          <ion-row class="formRow">
             <ion-col class="centerContent">
               <p style="margin-bottom:1em">Visit a Room</p>
             </ion-col>
@@ -19,7 +19,8 @@
               </ion-input>
             </ion-col>
             <ion-col class="centerContent">
-              <ion-button block color="secondary" (click)='visitRoom()' [disabled]='!visitForm.valid'>
+              <ion-button block color="secondary" (click)='visitRoom()' [disabled]='!visitForm.valid'
+              color="tertiary">
                 Go
               </ion-button>
             </ion-col>
@@ -30,7 +31,7 @@
 </ion-header>
 
 <ion-content class="content">
-  <ion-button expand="full" block (click)="createRoom()" color="tertiary">
+  <ion-button expand="block" block (click)="createRoom()" color="tertiary" class="createButton">
     Create Room
   </ion-button>
 
@@ -38,9 +39,27 @@
     <ion-list-header color="primary" class="headerText">
       <ion-label>Room List</ion-label>
     </ion-list-header>
-    <ion-item class="item" *ngFor="let room of roomList | async"
-              (click)="navigateToRoom(room.roomReference.id)">
+
+
+    <ion-item-sliding *ngFor="let room of roomList | async" #roomSlideItem>
+    <ion-item (click)="navigateToRoom(room.roomReference.id)"
+              class="item">
       {{ room.roomReference.id }}
     </ion-item>
+    <ion-item-options class="itemContainer" side="end">
+      <ion-item-option (click)="deleteRoom(roomSlideItem, room.roomReference.id)">DELETE</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+
+    
+
+
+
+
+
+
+
   </ion-list>
 </ion-content>

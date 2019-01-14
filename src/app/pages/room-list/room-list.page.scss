@@ -23,8 +23,7 @@
 }
 
 .roomList{
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 0px;
 }
 
 .item{
@@ -34,5 +33,17 @@
 
 .headerText{
   font-size: 20px;
+}
+
+.formRow{
+  padding-top: .5rem;
+}
+
+.createButton{
+  margin: 5px 10px 5px 10px;
+}
+
+.itemContainer{
+  background: var(--ion-color-primary);
 }
 
