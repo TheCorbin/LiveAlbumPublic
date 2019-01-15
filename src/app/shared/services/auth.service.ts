@@ -216,13 +216,6 @@ export class AuthService {
     this.fireStore
     .doc(`users/${this.userId}/myRooms/${room}`)
     .delete();
-
-    this.fireStore
-    .doc(`rooms/${room}`)
-    .delete();
-
-    
-
   }
 
   getRoomIds(): AngularFirestoreCollection<any> {
