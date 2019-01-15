@@ -23,10 +23,10 @@ const routes: Routes = [
     path: 'login-options',
     loadChildren: './pages/login-options/login-options.module#LoginOptionsPageModule',
   },
-  {
-    path: 'normal-login',
-    loadChildren: './pages/normal-login/normal-login.module#NormalLoginPageModule',
-  },
+  // {
+  //   path: 'normal-login',
+  //   loadChildren: './pages/normal-login/normal-login.module#NormalLoginPageModule',
+  // },
   {
     path: 'password-reset',
     loadChildren: './pages/password-reset/password-reset.module#PasswordResetPageModule',

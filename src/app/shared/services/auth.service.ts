@@ -210,6 +210,20 @@ export class AuthService {
       });
   }
 
+  async deleteRoom(room) {
+    console.log('this is the room', room);
+
+    this.fireStore
+    .doc(`users/${this.userId}/myRooms/${room}`)
+    .delete();
+
+    this.fireStore
+    .doc(`rooms/${room}`)
+    .delete();
+
+    
+
+  }
 
   getRoomIds(): AngularFirestoreCollection<any> {
     return this.fireStore.collection(

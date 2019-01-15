@@ -1,6 +1,6 @@
-.lineInput{
-  --background: white;
-}
+// .lineInput{
+//   --background: white;
+// }
 
 .noPadding{
   padding-top: 0px;
@@ -17,3 +17,33 @@
 .centerContent{
   text-align: center;
 }
+
+.content{
+  --background: var(--ion-color-secondary);
+}
+
+.roomList{
+  padding: 0px;
+}
+
+.item{
+  --background: var(--ion-color-secondary);
+  color:white;
+}
+
+.headerText{
+  font-size: 20px;
+}
+
+.formRow{
+  padding-top: .5rem;
+}
+
+.createButton{
+  margin: 5px 10px 5px 10px;
+}
+
+.itemContainer{
+  background: var(--ion-color-primary);
+}
+

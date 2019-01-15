@@ -1,24 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <!-- <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons> -->
-
+  <ion-toolbar color="primary">
     <ion-title> Room List </ion-title>
     <ion-buttons slot="end">
-      <!-- <ion-button *ngIf="anonymous" (click)="upgradeAccount()">
-        <ion-icon name="person-add"></ion-icon>
-      </ion-button> -->
-      
       <ion-button icon-only (click)="logout()" icon-end>
         <ion-icon name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
       <form [formGroup]="visitForm"  class="noPadding">
         <ion-grid no-padding>
-          <ion-row>
+          <ion-row class="formRow">
             <ion-col class="centerContent">
               <p style="margin-bottom:1em">Visit a Room</p>
             </ion-col>
@@ -27,7 +19,8 @@
               </ion-input>
             </ion-col>
             <ion-col class="centerContent">
-              <ion-button block color="secondary" (click)='visitRoom()' [disabled]='!visitForm.valid'>
+              <ion-button block color="secondary" (click)='visitRoom()' [disabled]='!visitForm.valid'
+              color="tertiary">
                 Go
               </ion-button>
             </ion-col>
@@ -37,42 +30,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <!-- <ion-card>
-    <ion-card-content>
-      <form [formGroup]="visitForm">
-
-        <ion-label>
-          <ion-icon name="barcode" item-start class="text-primary"></ion-icon>
-          Have a Room Code?  Enter it here:
-        </ion-label>
-
-        <ion-input type="roomId" formControlName="roomId"  placeholder="Right here">
-        </ion-input>
-      
-        <ion-item class="error-message" *ngIf="!visitForm.controls['roomId'].valid && visitForm.controls['roomId'].touched">
-          <ion-label>Your roomId needs more than 6 characters</ion-label> 
-        </ion-item>
-
-        <ion-button block (click)='goToRoom()' [disabled]='!visitForm.valid'>
-          GO!!!
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card> -->
-
-  <ion-button block (click)="createRoom()">
+<ion-content class="content">
+  <ion-button expand="block" block (click)="createRoom()" color="tertiary" class="createButton">
     Create Room
   </ion-button>
 
-  <ion-list>
-    <ion-list-header>
-      Room List
+  <ion-list color="primary" class="roomList">
+    <ion-list-header color="primary" class="headerText">
+      <ion-label>Room List</ion-label>
     </ion-list-header>
-    <ion-item *ngFor="let room of roomList | async"
-              (click)="navigateToRoom(room.roomReference.id)">
+
+
+    <ion-item-sliding *ngFor="let room of roomList | async" #roomSlideItem>
+    <ion-item (click)="navigateToRoom(room.roomReference.id)"
+              class="item">
       {{ room.roomReference.id }}
     </ion-item>
+    <ion-item-options class="itemContainer" side="end">
+      <ion-item-option (click)="deleteRoom(roomSlideItem, room.roomReference.id)">DELETE</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+
+
+    
+
+
+
+
+
+
+
   </ion-list>
 </ion-content>

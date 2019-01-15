@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="{{this.backRoute}}">
       </ion-back-button>
@@ -7,15 +7,20 @@
     <ion-title>Room: {{ roomId }}</ion-title>
     <ion-buttons slot="end">
       <ion-button icon-only (click)="barcode()">
-        <ion-icon size="large" name="barcode"></ion-icon>
+        <ion-icon name="barcode"></ion-icon>
       </ion-button>
+
+      <!-- <ion-button>   
+      <ion-button *ngIf="anonymous" (click)="upgradeAccount()">
+        <ion-icon name="person-add"></ion-icon>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content no-padding>
-  <ion-list class="maxList" no-padding no-margin>
+<ion-content no-padding class="background">
+  <ion-list class="background" no-padding no-margin color="primary">
     <ion-card *ngFor="let picture of pictureList | async | reverse">
       <ion-card-header>
         {{picture.email}}
@@ -28,13 +33,13 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-grid no-padding>
       <ion-row no-padding no-margin>
         <ion-col col-4 no-padding>
         </ion-col>
         <ion-col col-4 no-padding class="photoColumn">
-          <ion-button no-padding expand="full" class="fuller" (click)="takePhoto()">
+          <ion-button no-padding expand="block" class="fuller" (click)="takePhoto()" color="success">
             <ion-icon size="large" name="camera"></ion-icon>
           </ion-button>
         </ion-col>
@@ -44,4 +49,3 @@
     </ion-grid>
   </ion-toolbar>
 </ion-footer>
-
