@@ -3,8 +3,6 @@ import { TestBed, inject } from '@angular/core/testing';
 import { PhotoService } from './photo.service';
 
 describe('PhotoService', () => {
-  let service: PhotoService;
-  
 
   beforeEach(() => {
     TestBed.configureTestingModule({

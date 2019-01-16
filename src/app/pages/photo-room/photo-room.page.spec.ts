@@ -24,6 +24,4 @@ describe('PhotoRoomPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  
 });
