@@ -21,7 +21,7 @@
 
 <ion-content no-padding class="background">
   <ion-list class="background" no-padding no-margin color="primary">
-    <ion-card *ngFor="let picture of pictureList | async | reverse">
+    <ion-card *ngFor="let picture of pictureList | async">
       <ion-card-header>
         {{picture.email}}
       </ion-card-header>

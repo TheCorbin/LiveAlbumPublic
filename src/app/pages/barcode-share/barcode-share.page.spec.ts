@@ -2,6 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BarcodeSharePage } from './barcode-share.page';
+import { Router } from '@angular/router';
+
 
 describe('BarcodeSharePage', () => {
   let component: BarcodeSharePage;

@@ -24,4 +24,5 @@ describe('RoomListPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
