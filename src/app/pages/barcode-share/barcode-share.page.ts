@@ -17,8 +17,7 @@ export class BarcodeSharePage implements OnInit {
 
   constructor(
     public router: Router,
-    public route: ActivatedRoute) 
-  {
+    public route: ActivatedRoute) {
     this.roomId = this.route.snapshot.paramMap.get('roomId');
     console.log('Barcode in Barcode Share', this.roomId);
     this.room = 'ryancorb.in/#/photo-room' + '?room=' + encodeURI(this.roomId);
