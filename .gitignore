@@ -48,6 +48,7 @@ log.txt
 .sass-cache/
 .tmp/
 .versions/
+environments/
 www/
 tmp/
 temp/
