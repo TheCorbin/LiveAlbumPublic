@@ -10,8 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { firebaseConfig } from './credentials';
-
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -21,7 +20,7 @@ import { firebaseConfig } from './credentials';
             IonicModule.forRoot(),
             AppRoutingModule,
             AngularFireDatabaseModule,
-            AngularFireModule.initializeApp(firebaseConfig),
+            AngularFireModule.initializeApp(environment.firebase),
             AngularFireAuthModule,
             AngularFireStorageModule,
             AngularFirestoreModule],

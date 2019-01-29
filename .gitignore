@@ -1,16 +1,46 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Local ENV Variables for development
+.env
+
+# SDK service account files
+*adminsdk*.json
+
+# build directories
+dist
+compiled
+.awcache
+.rpt2_cache
+
+# Coverage & Testing
+coverage/
+
+# Firebase specific files
+.firebase/
+
 *~
 *.sw[mnpcod]
-*.log
 *.tmp
 *.tmp.*
 log.txt
 *.sublime-project
 *.sublime-workspace
 .vscode/
-npm-debug.log*
 
 .idea/
 .ionic/
@@ -18,9 +48,7 @@ npm-debug.log*
 .sass-cache/
 .tmp/
 .versions/
-coverage/
 www/
-node_modules/
 tmp/
 temp/
 platforms/
@@ -32,3 +60,7 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+# Remvoes app specific stuff
+android/
+credentials.ts
